@@ -12,7 +12,7 @@ export default function Product({ product }) {
         <h2>${product.price}</h2>
       </div>
       <button>Add to Cart 🛒</button>
-      <Link href={"/"}>View More →</Link>
+      <Link href={`/${product.id}`}>View More →</Link>
     </div>
   );
 }
