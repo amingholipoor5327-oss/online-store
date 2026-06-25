@@ -1,7 +1,11 @@
+"use client"
 import Link from "next/link";
 import styles from "./product.module.css";
-
+import { useContext } from "react";
+import {cartcontext} from "../context/context"
 export default function Product({ product }) {
+
+  const{addcart} = useContext(cartcontext)
   return (
     <div className={styles.container}>
       <div>
@@ -11,7 +15,7 @@ export default function Product({ product }) {
         <h1>{product.title}</h1>
         <h2>${product.price}</h2>
       </div>
-      <button>Add to Cart 🛒</button>
+      <button onClick={()=>addcart(product)}>Add to Cart 🛒</button>
       <Link href={`/${product.id}`}>View More →</Link>
     </div>
   );

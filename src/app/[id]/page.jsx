@@ -2,9 +2,13 @@ import Link from "next/link";
 
 export default  async function View({params}){
 
-    let{id} = await params;
+    let{id} = await  params;
 
     let response = await  fetch(`https://fakestoreapi.com/products/${id}`)
+
+    if(!response.ok){
+        throw new Error("falid page ")
+    }
 
     let products = await response.json()
 

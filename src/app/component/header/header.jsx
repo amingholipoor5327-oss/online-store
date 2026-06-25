@@ -6,7 +6,7 @@ export default function Header() {
     <div className={styles.container}>
       <h1>Amin style</h1>
       <div>
-        <Link href="/Cart">Cart</Link>
+        <Link href="/component/cart">Cart</Link>
       </div>
     </div>
   );
