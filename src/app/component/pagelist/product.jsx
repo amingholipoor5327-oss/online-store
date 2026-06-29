@@ -1,6 +1,6 @@
 "use client"
 import Link from "next/link";
-import styles from "./product.module.css";
+import styles from "../../css/product.module.css";
 import { useContext } from "react";
 import {cartcontext} from "../context/context"
 export default function Product({ product }) {

@@ -1,0 +1,68 @@
+/* header styles */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #1a1a2e, #1a2e64, #0f3460);
+  color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  /* important for style.css */
+  position: sticky;
+  top: 0;
+   margin: -4px -8px 2rem -8px;
+  z-index: 100;
+}
+
+.container h1 {
+  font-size: 1.8rem;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 1px;
+  background: linear-gradient(135deg, #ff8000f2, #a54500);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.container div {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.container a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  background-color: #b1b1b1;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.container a:hover {
+  background-color: #ff5e00;
+  border-color: #000000;
+   color: rgb(255, 255, 255);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(230, 126, 34, 0.4);
+}
+
+ @media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 0.8rem 1rem;
+    gap: 0.5rem;
+  }
+
+  .container h1 {
+    font-size: 1.4rem;
+  }
+
+  .container a {
+    font-size: 0.9rem;
+    padding: 0.3rem 0.8rem;
+  }
+}

@@ -1,5 +1,5 @@
 import Product from "./product";
-import styles from "./productlist.module.css";
+import styles from "../../css/productlist.module.css";
 
 export default function Productlist({ product }) {
   return (
