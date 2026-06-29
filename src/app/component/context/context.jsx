@@ -1,12 +1,26 @@
 "use client";
 
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const cartcontext = createContext();
 
 export default function Cartprovider({ children }) {
   const [cart, setCart] = useState([]);
 
+
+  useEffect(()=>{
+
+    let storage = localStorage.getItem("cart")
+    if(storage){
+     setCart(JSON.parse(storage)) 
+    }
+  },[])
+
+
+  useEffect(()=>{
+
+    localStorage.setItem("cart" , JSON.stringify(cart))
+  },[cart])
   // افزودن محصول به سبد خرید
   function addcart(product) {
     setCart((prev) => {
@@ -62,7 +76,7 @@ function totalprice() {
         removecart,
         updatecart,
         clearcart,
-        totalprice,
+        totalprice
       }}
     >
       {children}

@@ -5,7 +5,7 @@ import { cartcontext } from "../context/context";
 import Link from "next/link";
 
 export default function Cart() {
-  const { cart, removecart , updatecart , totalprice } = useContext(cartcontext);
+  const { cart, removecart , updatecart , totalprice,clearcart  } = useContext(cartcontext);
 
   return (
     <div>
@@ -33,10 +33,12 @@ export default function Cart() {
             <button onClick={() => removecart(product.id)}>
               Remove
             </button>
+         
           </div>
         ))
       )}
       <Link href={"/"}>back to shop</Link>
+      <button onClick={()=>clearcart()}> delete all</button>
     </div>
   );
 }

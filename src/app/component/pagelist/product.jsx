@@ -15,7 +15,10 @@ export default function Product({ product }) {
         <h1>{product.title}</h1>
         <h2>${product.price}</h2>
       </div>
-      <button onClick={()=>addcart(product)}>Add to Cart 🛒</button>
+      <button onClick={()=>{
+        addcart(product)
+        confirm("are you sure?")
+      }}>Add to Cart 🛒</button>
       <Link href={`/${product.id}`}>View More →</Link>
     </div>
   );
