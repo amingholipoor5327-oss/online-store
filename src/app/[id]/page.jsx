@@ -1,5 +1,5 @@
 import Link from "next/link";
-
+import styles from "../css/details.module.css"
 export default  async function View({params}){
 
     let{id} = await  params;
@@ -12,16 +12,23 @@ export default  async function View({params}){
 
     let products = await response.json()
 
-    return(<div>
-            {products.category}
+    return(
+    <div className={styles.container}>
 
-        <ul>
+        <h1>{products.category}</h1>
+        <div>
             <img src={products.image} alt={products.title}></img>
-            <li>{products.description}</li>
-            <li>{products.title}</li>
-            <li>{products.price}</li>
-        </ul>
-        
-        <Link href={"/"}>back to shop</Link>
+            {products.title} 
+            <h3>price: {products.price}$</h3>  
+        </div>
+          
+        <h2>
+            {products.description} 
+        </h2>
+
+         
+             
+         
+        <Link className={styles.button} href={"/"}>back to shop</Link>
     </div>)
 }
